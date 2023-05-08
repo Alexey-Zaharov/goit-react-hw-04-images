@@ -25,7 +25,14 @@ const ImageGallery = ({ showModal, dataToRender, getData }) => {
 ImageGallery.propTypes = {
   showModal: PropTypes.func.isRequired,
   getData: PropTypes.func.isRequired,
-  dataToRender: PropTypes.arrayOf(PropTypes.object),
+  dataToRender: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      tags: PropTypes.string.isRequired,
+      largeImageURL: PropTypes.string.isRequired,
+      webformatURL: PropTypes.string.isRequired,
+    })
+  ),
 };
 
 export default ImageGallery;
